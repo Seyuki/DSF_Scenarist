@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:conv="clr-namespace:DSF_Scenarist.Classes.Converters">
+    
+    <!--Strings-->
+    <sys:String x:Key="Success">success</sys:String>
+    <sys:String x:Key="Failure">failure</sys:String>
+    
+    <!--Converters-->
+    <conv:CollectionCountConverter x:Key="CollectionCountConverter"/>
+
+    <!--Style du nom-->
+    <Style x:Key="ItemName" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+    
+    <!--Style de la card-->
+    <Style x:Key="StoryItem" TargetType="materialDesign:Card">
+        <!--Elements-->
+        <Setter Property="ContextMenu">
+            <Setter.Value>
+                <ContextMenu>
+                    <MenuItem Header="Ouvrir" Command="{Binding OpenCmd}"/>
+                    <MenuItem Header="Supprimer" Command="{Binding DeleteCmd}" />
+                </ContextMenu>
+            </Setter.Value>
+        </Setter>
+        
+        <!--Triggers-->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#555555"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

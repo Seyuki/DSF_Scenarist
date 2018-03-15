@@ -1,0 +1,42 @@
+﻿<metro:MetroWindow x:Class="DSF_Scenarist.Windows.AskForSavingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:DSF_Scenarist.Windows"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        BorderThickness="1"
+        ShowIconOnTitleBar="True"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Title="Enregistrer" TitleCaps="False"
+        UseLayoutRounding="True"
+        Height="175" Width="300" Icon="/DSF Scenarist;component/Resources/icon.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="16,22,16,20" Grid.Row="0" Orientation="Horizontal">
+            <materialDesign:PackIcon Kind="HelpCircle" VerticalAlignment="Top" HorizontalAlignment="Center" Width="32" Height="32" Margin="0,0,15,0" />
+
+            <StackPanel Margin="0,5,5,0">
+                <TextBlock Text="Le scénario a été modifié." FontSize="14"/>
+                <TextBlock Text="Voulez-vous l'enregistrer ?" FontSize="14"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Rectangle Grid.Row="1" Fill="#0C2196F3"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Grid.Row="1" Content="Oui" IsDefault="True" Style="{DynamicResource MaterialDesignFlatButton}" Margin="0,10,16,16" Height="30" Click="SendTrue"/>
+            <Button Grid.Row="1" Content="Non" Style="{DynamicResource MaterialDesignFlatButton}" Margin="0,10,16,16" Height="30" Click="SendFalse"/>
+            <Button Grid.Row="1" Content="Annuler" IsCancel="True" Style="{DynamicResource MaterialDesignFlatButton}" Margin="0,10,16,16" Height="30" Click="SendNull"/>
+        </StackPanel>
+    </Grid>
+</metro:MetroWindow>
